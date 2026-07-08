@@ -61,3 +61,17 @@ Web Application Login & Session Management
   1. Enter password string
   2. Toggle visibility icon
 * **Expected Result:** Password masked by default (`•••••`); plain text toggles correctly.
+
+---
+
+### 🧪 Test Case: TC006
+* **Feature:** Input Validation
+* **Type:** Boundary Value Analysis (BVA) | **Priority:** Medium
+* **Scenario:** Password length boundary limits (Min: 8, Max: 16 characters)
+* **Steps to Reproduce:**
+  1. Navigate to `/register` or `/reset-password`
+  2. Test Password with **7 chars** (Min - 1): Expect Error `"Password must be at least 8 characters"`
+  3. Test Password with **8 chars** (Exact Min): Expect Success
+  4. Test Password with **16 chars** (Exact Max): Expect Success
+  5. Test Password with **17 chars** (Max + 1): Expect Error `"Password cannot exceed 16 characters"`
+* **Expected Result:** System enforces exact length constraints at min/max limits without system errors.
